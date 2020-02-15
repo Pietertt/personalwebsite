@@ -1,0 +1,9 @@
+.portfolio {
+      border: 10px solid white;
+      box-shadow: 1.5px 1.5px 5px #aaaaaa;
+      
+}
+
+.portfolio > img {
+      width: 100%;
+}
