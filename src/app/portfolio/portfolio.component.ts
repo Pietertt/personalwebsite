@@ -21,7 +21,7 @@ export class PortfolioComponent implements OnInit {
       }
 
       getItems() {
-            this.itemService.fetchItems().subscribe(data => {
+            this.itemService.fetchItems(10).subscribe(data => {
                   for(let i = 0; i < data.length; i++){
                         this.items.push(data[i]);
                   }

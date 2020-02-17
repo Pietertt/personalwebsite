@@ -18,6 +18,8 @@
       /* colors */
       --yellow: #FDBC3F;
       --gray: rgb(230, 230, 230);
+      --red: #E0242E;
+      --laravel: #00B5AD;
 
 }
 
@@ -58,6 +60,12 @@ body {
       margin: 0 auto;
       padding-top: calc(var(--padding) / 1);
       padding-bottom: calc(var(--padding) / 1);
+}
+
+[class*="container no-padding"] {
+      margin: 0 auto;
+      padding-top: 0;
+      padding-bottom: 0;
 }
 
 .row::after {
@@ -208,6 +216,17 @@ a {
       color: #FFFFFF;
 }
 
+.label {
+      background-color: var(--gray);
+      padding-left: calc(var(--padding) / 2);
+      padding-right: calc(var(--padding) / 2);
+      padding-top: calc(var(--padding) / 4);
+      padding-bottom: calc(var(--padding) / 4);
+      margin-left: 20px;
+      border-radius: 5px;
+      color: white;
+}
+
 /* Colors
 ---------------------------------------------------------------- */
 
@@ -222,6 +241,14 @@ a {
 
 .white {
       background-color: #FFFFFF;
+}
+
+.red {
+      background-color: var(--red);
+}
+
+.laravel {
+      background-color: var(--laravel);
 }
 
 router-outlet ~ * {
