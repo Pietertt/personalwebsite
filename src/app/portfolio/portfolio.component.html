@@ -1,22 +1,30 @@
-<div class="ten wide container">
-      <div class="row">
-            <div class="twelve wide column">
-                  <h1 class="square">Portfolio</h1>
-                  <p>Quisque ac lectus nec lacus ultricies commodo. Mauris ex magna, tempor at efficitur ac, maximus suscipit elit. Quisque ac nulla est. Sed elementum turpis nec elit rhoncus mollis. Mauris dignissim feugiat mauris, at bibendum mi venenatis eu. Vestibulum fermentum varius condimentum. Duis a vulputate velit. Curabitur varius nibh a neque accumsan imperdiet. In vitae risus quis nisi varius pretium.</p>
-            </div>
+<ng-container *ngIf="loading">
+      <div id="div-loader-container">
+            <div class="lds-dual-ring"></div>
       </div>
-</div>
-<div class="ten wide container" *ngFor="let item of items">
-      <div class="row">
-            <div class="six wide column">
-                  <div class="portfolio">
-                        <img class="image" src="http://localhost:8080/images/{{ item.image }}">
+</ng-container>
+<ng-container *ngIf="!loading">
+      <app-menu></app-menu>
+      <div class="ten wide container">
+            <div class="row">
+                  <div class="twelve wide column">
+                        <h1 class="square">Portfolio</h1>
+                        <p>Quisque ac lectus nec lacus ultricies commodo. Mauris ex magna, tempor at efficitur ac, maximus suscipit elit. Quisque ac nulla est. Sed elementum turpis nec elit rhoncus mollis. Mauris dignissim feugiat mauris, at bibendum mi venenatis eu. Vestibulum fermentum varius condimentum. Duis a vulputate velit. Curabitur varius nibh a neque accumsan imperdiet. In vitae risus quis nisi varius pretium.</p>
                   </div>
             </div>
-            <div class="six wide column">
-                  <h3>{{ item.title }}</h3>
-                  <p>{{ item.description }}</p>
-                  <button class="basic button"><a routerLink="/item/{{ item.id }}">Meer informatie</a></button>
-            </div>
       </div>
-</div> 
+      <div class="ten wide container" *ngFor="let item of items">
+            <div class="row">
+                  <div class="six wide column">
+                        <div class="portfolio">
+                              <img class="image" src="http://localhost:8080/images/{{ item.image }}">
+                        </div>
+                  </div>
+                  <div class="six wide column">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                        <button class="basic button"><a routerLink="/item/{{ item.id }}">Meer informatie</a></button>
+                  </div>
+            </div>
+      </div> 
+</ng-container>
