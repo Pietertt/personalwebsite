@@ -27,6 +27,13 @@
       margin-left: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+
+      img {
+            width: 100% !important;
+      }
+}
+
 * {
       box-sizing: border-box;
 }
@@ -527,8 +534,8 @@ img {
 
 .icon {
       vertical-align: middle;
-      width: 30px;
-      height: 30px;
+      width: 30px !important;
+      height: 30px !important;
       margin-right: 10px; 
       cursor: pointer;
 }

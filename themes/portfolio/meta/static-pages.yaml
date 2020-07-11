@@ -1,4 +1,3 @@
 static-pages:
     test: {  }
-    portfolio:
-        portfolio-valksverhuur: {  }
+    valksverhuur: {  }
