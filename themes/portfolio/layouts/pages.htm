@@ -7,8 +7,9 @@ default = 0
             <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
       </head>
       <body>
+            {% partial "navigation" %}
             <div class="thirteen wide container">
-                  <div class="ten wide two offset column">
+                  <div class="eleven wide one offset column">
                         {% component 'staticPage' %}
                   </div>
             </div>
