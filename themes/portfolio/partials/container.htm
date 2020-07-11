@@ -1,11 +1,12 @@
 [viewBag]
 snippetCode = "container"
 snippetName = "Container"
-snippetProperties[page_title][title] = "Title"
 
-snippetProperties[column_width][title]      = "Kies een waarde"
+snippetProperties[page_title][title] = "Title"
+snippetProperties[text][title] = "Tekst"
+
+snippetProperties[column_width][title]      = "Kolom breedte"
 snippetProperties[column_width][type]       = "dropdown"
-snippetProperties[column_width][1]          = "1"
 snippetProperties[column_width][options][1] = "1"
 snippetProperties[column_width][options][2] = "2"
 snippetProperties[column_width][options][3] = "3"
@@ -19,9 +20,32 @@ snippetProperties[column_width][options][10] = "10"
 snippetProperties[column_width][options][11] = "11"
 snippetProperties[column_width][options][12] = "12"
 snippetProperties[column_width][options][13] = "13"
+
+snippetProperties[background_color][title]      = "Achtergrondkleur"
+snippetProperties[background_color][type]       = "dropdown"
+snippetProperties[background_color][options][1] = "Wit"
+snippetProperties[background_color][options][2] = "Grijs"
+snippetProperties[background_color][options][3] = "Donkerblauw"
+
+snippetProperties[offset][title]      = "Afstand"
+snippetProperties[offset][type]       = "dropdown"
+snippetProperties[offset][options][1] = "1"
+snippetProperties[offset][options][2] = "2"
+snippetProperties[offset][options][3] = "3"
+
 ==
-<div class="container">
-      <div class="">
-            {{column_width}}
+function onStart(){
+      $this['values'] = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen"];
+      $this['colors'] = ["white", "light-gray", "dark-blue"];
+}
+==
+<div class="thirteen wide container">
+      <div class="{{values[column_width - 1]}} wide {{values[offset - 1]}} offset {{colors[background_color - 1]}} top bottom container">
+           <div class="eleven wide one offset column">
+            <div class="row">
+                  <h1>{{page_title}}</h1>
+                  <p>{{text}}</p>
+            </div>
+           </div>
       </div>
 </div>
