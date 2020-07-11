@@ -2,6 +2,7 @@
       namespace pieterboersma\Portfolio\Components;
 
 use Illuminate\Support\Facades\DB;
+use pieterboersma\Portfolio\Models\Item;
 
 class Portfolio extends \Cms\Classes\ComponentBase {
           public function componentDetails(){
@@ -14,7 +15,9 @@ class Portfolio extends \Cms\Classes\ComponentBase {
           // This array becomes available on the page as {{ component.posts }}
           public function posts()
           {
-            $users = DB::select('select * from users where active = ?', [1]);
+            $items = Item::all();
+
+            return $items;
           }
       }
 ?>

@@ -134,7 +134,7 @@ class Index extends Controller
 
         $this->bodyClass = 'compact-container';
         $this->pageTitle = 'cms::lang.cms.menu_label';
-        $this->pageTitleTemplate = '%s '.Lang::get($this->pageTitle);
+        $this->pageTitleTemplate = '%s '.trans($this->pageTitle);
 
         if (Request::ajax() && Request::input('formWidgetAlias')) {
             $this->bindFormWidgetToController();
@@ -191,7 +191,7 @@ class Index extends Controller
         $templateData = [];
 
         $settings = array_get($saveData, 'settings', []) + Request::input('settings', []);
-        $settings = $this->upgradeSettings($settings, $template->settings);
+        $settings = $this->upgradeSettings($settings);
 
         if ($settings) {
             $templateData['settings'] = $settings;
@@ -380,7 +380,7 @@ class Index extends Controller
     public function onExpandMarkupToken()
     {
         if (!$alias = post('tokenName')) {
-            throw new ApplicationException(Lang::get('cms::lang.component.no_records'));
+            throw new ApplicationException(trans('cms::lang.component.no_records'));
         }
 
         // Can only expand components at this stage
@@ -389,25 +389,20 @@ class Index extends Controller
         }
 
         if (!($names = (array) post('component_names')) || !($aliases = (array) post('component_aliases'))) {
-            throw new ApplicationException(Lang::get('cms::lang.component.not_found', ['name' => $alias]));
+            throw new ApplicationException(trans('cms::lang.component.not_found', ['name' => $alias]));
         }
 
         if (($index = array_get(array_flip($aliases), $alias, false)) === false) {
-            throw new ApplicationException(Lang::get('cms::lang.component.not_found', ['name' => $alias]));
+            throw new ApplicationException(trans('cms::lang.component.not_found', ['name' => $alias]));
         }
 
         if (!$componentName = array_get($names, $index)) {
-            throw new ApplicationException(Lang::get('cms::lang.component.not_found', ['name' => $alias]));
+            throw new ApplicationException(trans('cms::lang.component.not_found', ['name' => $alias]));
         }
 
         $manager = ComponentManager::instance();
         $componentObj = $manager->makeComponent($componentName);
         $partial = ComponentPartial::load($componentObj, 'default');
-
-        if (!$partial) {
-            throw new ApplicationException(Lang::get('cms::lang.component.no_default_partial'));
-        }
-
         $content = $partial->getContent();
         $content = str_replace('__SELF__', $alias, $content);
 
@@ -556,12 +551,12 @@ class Index extends Controller
     protected function validateRequestTheme()
     {
         if ($this->theme->getDirName() != Request::input('theme')) {
-            throw new ApplicationException(Lang::get('cms::lang.theme.edit.not_match'));
+            throw new ApplicationException(trans('cms::lang.theme.edit.not_match'));
         }
     }
 
     /**
-     * Resolves a template type to its class name
+     * Reolves a template type to its class name
      * @param string $type
      * @return string
      */
@@ -576,7 +571,7 @@ class Index extends Controller
         ];
 
         if (!array_key_exists($type, $types)) {
-            throw new ApplicationException(Lang::get('cms::lang.template.invalid_type'));
+            throw new ApplicationException(trans('cms::lang.template.invalid_type'));
         }
 
         return $types[$type];
@@ -593,7 +588,7 @@ class Index extends Controller
         $class = $this->resolveTypeClassName($type);
 
         if (!($template = call_user_func([$class, 'load'], $this->theme, $path))) {
-            throw new ApplicationException(Lang::get('cms::lang.template.not_found'));
+            throw new ApplicationException(trans('cms::lang.template.not_found'));
         }
 
         /**
@@ -628,7 +623,7 @@ class Index extends Controller
         $class = $this->resolveTypeClassName($type);
 
         if (!($template = $class::inTheme($this->theme))) {
-            throw new ApplicationException(Lang::get('cms::lang.template.not_found'));
+            throw new ApplicationException(trans('cms::lang.template.not_found'));
         }
 
         return $template;
@@ -645,7 +640,7 @@ class Index extends Controller
         if ($type === 'page') {
             $result = $template->title ?: $template->getFileName();
             if (!$result) {
-                $result = Lang::get('cms::lang.page.new');
+                $result = trans('cms::lang.page.new');
             }
 
             return $result;
@@ -654,7 +649,7 @@ class Index extends Controller
         if ($type === 'partial' || $type === 'layout' || $type === 'content' || $type === 'asset') {
             $result = in_array($type, ['asset', 'content']) ? $template->getFileName() : $template->getBaseFileName();
             if (!$result) {
-                $result = Lang::get('cms::lang.'.$type.'.new');
+                $result = trans('cms::lang.'.$type.'.new');
             }
 
             return $result;
@@ -681,7 +676,7 @@ class Index extends Controller
         ];
 
         if (!array_key_exists($type, $formConfigs)) {
-            throw new ApplicationException(Lang::get('cms::lang.template.not_found'));
+            throw new ApplicationException(trans('cms::lang.template.not_found'));
         }
 
         $widgetConfig = $this->makeConfig($formConfigs[$type]);
@@ -692,12 +687,11 @@ class Index extends Controller
     }
 
     /**
-     * Processes the component settings so they are ready to be saved.
-     * @param array $settings The new settings for this template.
-     * @param array $prevSettings The previous settings for this template.
+     * Processes the component settings so they are ready to be saved
+     * @param array $settings
      * @return array
      */
-    protected function upgradeSettings($settings, $prevSettings)
+    protected function upgradeSettings($settings)
     {
         /*
          * Handle component usage
@@ -708,46 +702,26 @@ class Index extends Controller
 
         if ($componentProperties !== null) {
             if ($componentNames === null || $componentAliases === null) {
-                throw new ApplicationException(Lang::get('cms::lang.component.invalid_request'));
+                throw new ApplicationException(trans('cms::lang.component.invalid_request'));
             }
 
             $count = count($componentProperties);
             if (count($componentNames) != $count || count($componentAliases) != $count) {
-                throw new ApplicationException(Lang::get('cms::lang.component.invalid_request'));
+                throw new ApplicationException(trans('cms::lang.component.invalid_request'));
             }
 
             for ($index = 0; $index < $count; $index++) {
                 $componentName = $componentNames[$index];
                 $componentAlias = $componentAliases[$index];
 
-                $isSoftComponent = (substr($componentAlias, 0, 1) === '@');
-                $componentName = ltrim($componentName, '@');
-                $componentAlias = ltrim($componentAlias, '@');
-
-                if ($componentAlias !== $componentName) {
-                    $section = $componentName . ' ' . $componentAlias;
-                } else {
-                    $section = $componentName;
-                }
-                if ($isSoftComponent) {
-                    $section = '@' . $section;
+                $section = $componentName;
+                if ($componentAlias != $componentName) {
+                    $section .= ' '.$componentAlias;
                 }
 
                 $properties = json_decode($componentProperties[$index], true);
                 unset($properties['oc.alias'], $properties['inspectorProperty'], $properties['inspectorClassName']);
-
-                if (!$properties) {
-                    $oldComponentSettings = array_key_exists($section, $prevSettings['components'])
-                        ? $prevSettings['components'][$section]
-                        : null;
-                    if ($isSoftComponent && $oldComponentSettings) {
-                        $settings[$section] = $oldComponentSettings;
-                    } else {
-                        $settings[$section] = $properties;
-                    }
-                } else {
-                    $settings[$section] = $properties;
-                }
+                $settings[$section] = $properties;
             }
         }
 
@@ -780,35 +754,6 @@ class Index extends Controller
         $this->fireSystemEvent('cms.template.processSettingsBeforeSave', [$dataHolder]);
 
         return $dataHolder->settings;
-    }
-
-    /**
-     * Finds a given component by its alias.
-     *
-     * If found, this will return the component's name, alias and properties.
-     *
-     * @param string $aliasQuery The alias to search for
-     * @param array $components The array of components to look within.
-     * @return array|null
-     */
-    protected function findComponentByAlias(string $aliasQuery, array $components = [])
-    {
-        $found = null;
-
-        foreach ($components as $name => $properties) {
-            list($name, $alias) = strpos($name, ' ') ? explode(' ', $name) : [$name, $name];
-
-            if (ltrim($alias, '@') === ltrim($aliasQuery, '@')) {
-                $found = [
-                    'name' => ltrim($name, '@'),
-                    'alias' => $alias,
-                    'properties' => $properties
-                ];
-                break;
-            }
-        }
-
-        return $found;
     }
 
     /**

@@ -1,8 +1,8 @@
-{% for post in __SELF__.posts() %}
+{% for item in __SELF__.posts() %}
       <div class="five wide one offset container" style="float: left;">
             <div class="thirteen wide column">
                   <div class="row">
-                        <p>Hi</p>
+                        <p>{{item.title}}</p>
                   </div>
             </div>
       </div>

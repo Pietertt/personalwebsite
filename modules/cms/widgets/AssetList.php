@@ -57,6 +57,8 @@ class AssetList extends WidgetBase
         parent::__construct($controller, []);
 
         $this->bindToController();
+
+        $this->checkUploadPostback();
     }
 
     /**
@@ -331,18 +333,11 @@ class AssetList extends WidgetBase
 
             $basename = basename($path);
             $originalFullPath = $this->getFullPath($path);
-            $newFullPath = realpath(rtrim($destinationFullPath, '/')) . '/' . $basename;
+            $newFullPath = rtrim($destinationFullPath, '/').'/'.$basename;
             $safeDir = $this->getAssetsPath();
 
             if ($originalFullPath == $newFullPath) {
                 continue;
-            }
-
-            if (!starts_with($newFullPath, $safeDir)) {
-                throw new ApplicationException(Lang::get(
-                    'cms::lang.asset.error_moving_file',
-                    ['file' => $basename]
-                ));
             }
 
             if (is_file($originalFullPath)) {
@@ -620,12 +615,10 @@ class AssetList extends WidgetBase
     }
 
     /**
-     * Process file uploads submitted via AJAX
-     *
-     * @return void
-     * @throws ApplicationException If the file "file_data" wasn't detected in the request or if the file failed to pass validation / security checks
+     * Checks the current request to see if it is a postback containing a file upload
+     * for this particular widget.
      */
-    public function onUpload()
+    protected function checkUploadPostback()
     {
         $fileName = null;
 
@@ -669,9 +662,7 @@ class AssetList extends WidgetBase
             /*
              * Accept the uploaded file
              */
-            $uploadedFile = $uploadedFile->move($this->getCurrentPath(), $uploadedFile->getClientOriginalName());
-
-            File::chmod($uploadedFile->getRealPath());
+            $uploadedFile->move($this->getCurrentPath(), $uploadedFile->getClientOriginalName());
 
             $response = Response::make('success');
         }
