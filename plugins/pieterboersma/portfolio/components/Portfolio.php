@@ -1,7 +1,9 @@
 <?php
       namespace pieterboersma\Portfolio\Components;
 
-      class Portfolio extends \Cms\Classes\ComponentBase {
+use Illuminate\Support\Facades\DB;
+
+class Portfolio extends \Cms\Classes\ComponentBase {
           public function componentDetails(){
               return [
                   'name' => 'Portfolio',
@@ -12,7 +14,7 @@
           // This array becomes available on the page as {{ component.posts }}
           public function posts()
           {
-              return ['First Post', 'Second Post', 'Third Post'];
+            $users = DB::select('select * from users where active = ?', [1]);
           }
       }
 ?>
