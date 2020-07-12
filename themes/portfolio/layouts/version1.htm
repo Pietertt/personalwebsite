@@ -10,12 +10,47 @@ default = 0
       </head>
       <body>
             {% partial "navigation" %}
-            <div class="eleven wide one offset dark-blue container">
+            <div class="thirteen wide dark-blue double container">
                   <div class="eleven wide one offset column">
-                        {% placeholder Titel %}
+                        {% page %}
                   </div>
             </div>
-            {% page %}
+
+            <div class="eleven wide one offset light-gray container">
+                  <div class="three wide one offset column">
+                        {% placeholder one title="Kolom 1" %}
+                  </div>
+                  <div class="seven wide one offset column">
+                        {% placeholder two title="Kolom 2" %}
+                  </div>
+            </div>
+
+            <div class="eleven wide one offset container">
+                  <div class="three wide column">
+                        {% placeholder three title="Kolom 3"%}
+                  </div>
+                  <div class="nine wide one offset column">
+                        {% placeholder four title="Kolom 4" %}
+                  </div>
+            </div>
+
+            <div class="eleven wide one offset container">
+                  <div class="row">
+                        <div class="eleven wide one offset column">
+                        
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="five wide one offset column">
+
+                        </div>
+                        <div class="five wide one offset column">
+                              
+                        </div>
+                  </div>
+            </div>
+
+            
       </body>
       <footer>
             {% partial "footer" %}
