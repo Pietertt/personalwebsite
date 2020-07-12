@@ -116,12 +116,13 @@ body {
       width: 100%;
 }
 
-[class*="top row"] {
+[class*="top"] {
+      margin-top: 0px;
       padding-top: 0px;
 }
 
-[class*="bottom row"]:first-of-type {
-      padding-bottom: 0px;
+[class*="bottom"]{
+      margin-bottom: 0px;
 }
 
 [class*="half row"]{
