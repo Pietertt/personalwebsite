@@ -1,3 +1,5 @@
+description = "Versie 1"
+
 [staticPage]
 useContent = 1
 default = 0
@@ -8,9 +10,12 @@ default = 0
       </head>
       <body>
             {% partial "navigation" %}
-            
-            {% component 'staticPage' %}
-                
+            <div class="eleven wide one offset dark-blue container">
+                  <div class="eleven wide one offset column">
+                        {% placeholder Titel %}
+                  </div>
+            </div>
+            {% page %}
       </body>
       <footer>
             {% partial "footer" %}
