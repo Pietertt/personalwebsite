@@ -2,6 +2,13 @@
 snippetCode = "container"
 snippetName = "Container"
 
+snippetProperties[margin_top][title] = "Margin bovenkant (px)"
+snippetProperties[margin_bottom][title] = "Margin onderkant (px)"
+snippetProperties[reverse_mobile][title] = "Reverse op mobile"
+snippetProperties[reverse_mobile][type] = "checkbox"
+snippetProperties[column_width][options][1] = "0"
+snippetProperties[column_width][options][2] = "1"
+
 snippetProperties[column_width][title]      = "Kolom breedte"
 snippetProperties[column_width][type]       = "dropdown"
 snippetProperties[column_width][options][1] = "0"
@@ -47,4 +54,4 @@ function onStart(){
       $this['colors'] = ["white", "light-gray", "dark-blue"];
 }
 ==
-<div class="{{values[column_width - 1]}} wide {{values[offset - 1]}} offset {{colors[background_color - 1]}} {{padding_v[padding_value]}} container">
+<div class="{{values[column_width - 1]}} wide {{values[offset - 1]}} offset {{colors[background_color - 1]}} {{padding_v[padding_value]}} vertical {{ (reverse_mobile == 0) ? '' : 'reverse' }} container" style="margin-top: {{margin_top}}px; margin-bottom: {{margin_bottom}}px">
