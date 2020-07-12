@@ -1,6 +1,6 @@
 ==
 <div class="thirteen wide test bottom container">
-      <a class="testen" href="/contact">Contact</a>
-      <a class="testen" href="/portfolio">Portfolio</a>
-      <a class="testen" href="/">Home</a>
+      <a class="testen {% if this.page.id == 'contact' %}active{% endif %}" href="/contact">Contact</a>
+      <a class="testen {% if this.page.id == 'portfolio' %}active{% endif %}" href="/portfolio">Portfolio</a>
+      <a class="testen {% if this.page.id == 'index' %}active{% endif %}" href="/">Home</a>
 </div>

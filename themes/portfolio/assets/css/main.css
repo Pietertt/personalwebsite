@@ -315,7 +315,7 @@ a.testen:last-child {
       }
 }
 
-a.testen.router-link-exact-active {
+a.active {
       color: var(--pink);
       border-color: var(--pink);
 }
