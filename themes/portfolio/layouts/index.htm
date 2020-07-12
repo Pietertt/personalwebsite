@@ -1,0 +1,40 @@
+description = "Homepagina"
+
+[staticPage]
+useContent = 1
+default = 0
+==
+<html>
+      <head>
+            <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
+      </head>
+      <body>
+            {% partial "navigation" %}
+            <div class="thirteen wide horizontal reverse mobile container">
+                  <div class="five wide one offset column">
+                        {% page %}
+                  </div>
+                  <div class="five wide one offset column">
+                        <div class="row">
+                              {% placeholder title title="Title" %}
+                        </div>
+                        <div class="row">
+                              <div class="thirteen wide top bottom light-gray container">
+                                    <div class="eleven wide one offset column">
+                                          <div class="row">
+                                                {% placeholder websites title="Websites" %}
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            
+      </body>
+      <footer>
+            {% partial "footer" %}
+      </footer>
+</html>
+
+
+
