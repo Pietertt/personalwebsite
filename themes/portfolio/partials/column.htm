@@ -1,6 +1,6 @@
 [viewBag]
-snippetCode = "container"
-snippetName = "Container"
+snippetCode = "column"
+snippetName = "Kolom"
 
 snippetProperties[column_width][title]      = "Kolom breedte"
 snippetProperties[column_width][type]       = "dropdown"
@@ -19,17 +19,6 @@ snippetProperties[column_width][options][12] = "11"
 snippetProperties[column_width][options][13] = "12"
 snippetProperties[column_width][options][14] = "13"
 
-snippetProperties[padding_value][title]      = "Padding"
-snippetProperties[padding_value][type]       = "dropdown"
-snippetProperties[padding_value][options][0] = "Normaal"
-snippetProperties[padding_value][options][1] = "Double"
-
-snippetProperties[background_color][title]      = "Achtergrondkleur"
-snippetProperties[background_color][type]       = "dropdown"
-snippetProperties[background_color][options][1] = "Wit"
-snippetProperties[background_color][options][2] = "Grijs"
-snippetProperties[background_color][options][3] = "Donkerblauw"
-
 snippetProperties[offset][title]      = "Afstand"
 snippetProperties[offset][type]       = "dropdown"
 snippetProperties[offset][options][1] = "0"
@@ -42,9 +31,8 @@ snippetProperties[offset][options][7] = "6"
 
 ==
 function onStart(){
-      $this['padding_v'] = ["", "double"];
       $this['values'] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen"];
       $this['colors'] = ["white", "light-gray", "dark-blue"];
 }
 ==
-<div class="{{values[column_width - 1]}} wide {{values[offset - 1]}} offset {{colors[background_color - 1]}} {{padding_v[padding_value]}} container">
+<div class="{{values[column_width - 1]}} wide {{values[offset - 1]}} offset column">

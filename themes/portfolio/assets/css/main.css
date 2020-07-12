@@ -46,8 +46,8 @@ body {
 
 [class*="container"]{
       width: 100%;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
       display: flex;
 }
 
@@ -84,8 +84,8 @@ body {
 }
 
 [class*="double"]{
-      margin-top: 40px;
-      margin-bottom: 40px;
+      padding-top: 40px;
+      padding-bottom: 40px;
 }
 
 [class*="triple"]{
@@ -198,12 +198,13 @@ body {
 
       [class*="one-third wide"]{ width: 33.33%;    }
 
-      [class*="one offset"]   { margin-left: 8.33%; }
-      [class*="two offset"]   { margin-left: 16.66%; }
-      [class*="three offset"] { margin-left: 25%; }
-      [class*="four offset"]  { margin-left: 33.33%; }
-      [class*="five offset"]  { margin-left: 41.66%; }
-      [class*="six offset"]   { margin-left: 50%; }
+      [class*="zero offset"]     { margin-left: 0%;   }
+      [class*="one offset"]     { margin-left: 7.69%;   }
+      [class*="two offset"]     { margin-left: 15.38%;  }
+      [class*="three offset"]   { margin-left: 23.08%;     }
+      [class*="four offset"]    { margin-left: 30.77%;  }
+      [class*="five offset"]    { margin-left: 38.46%;  }
+      [class*="six offset"]     { margin-left: 46.15%;     }
 
       [class*="one vertical offset"]   { margin-top: 7.69%; }
       [class*="two vertical offset"]   { margin-top: 15.38%; }
@@ -239,8 +240,6 @@ body {
 
 p {
       line-height: 2.0em;
-      margin-bottom: 0;
-      padding-bottom: 0;
 }
 
 a {

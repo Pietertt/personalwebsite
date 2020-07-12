@@ -1,0 +1,25 @@
+[viewBag]
+snippetCode = "button"
+snippetName = "Button"
+
+snippetProperties[text][title] = "Tekst"
+snippetProperties[link][title] = "Link"
+
+snippetProperties[background_color][title]      = "Achtergrondkleur"
+snippetProperties[background_color][type]       = "dropdown"
+snippetProperties[background_color][options][1] = "Donkerblauw"
+snippetProperties[background_color][options][2] = "Blauw"
+snippetProperties[background_color][options][3] = "Lightblauw"
+snippetProperties[background_color][options][4] = "Roze"
+snippetProperties[background_color][options][5] = "Wit"
+snippetProperties[background_color][options][6] = "Omgekeerd"
+
+
+==
+function onStart(){
+      $this['colors'] = ["dark-blue", "blue", "light-blue", "pink", "white", "reverse"];
+}
+==
+<div class="row">
+      <a href="{{link}}"><button class="{{colors[background_color - 1]}} button">{{text}}</button></a>
+</div>
