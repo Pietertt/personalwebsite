@@ -1,3 +1,11 @@
+<div class="thirteen wide text-centered dark-blue double container">
+      <div class="eleven wide one offset column">
+            <div class="row">
+                  <h1>Een overzicht van mijn projecten</h1>
+                  <p>Een overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projectenEen overzicht van mijn projecten</p>
+            </div>
+      </div>
+</div>
 {% for item in __SELF__.items() %}
       <div class="thirteen wide horizontal mobile container" style="float: left;">
             <div class="seven wide one offset column">
@@ -7,7 +15,7 @@
             </div>
             <div class="three wide one offset column">
                   <div class="row">
-                        <h1>{{ item.title }}</h1>
+                        <h2>{{ item.title }}</h2>
                         <p>{{ item.description }}</p>
                         <button class="pink button">Bekijken</button>
                   </div>
