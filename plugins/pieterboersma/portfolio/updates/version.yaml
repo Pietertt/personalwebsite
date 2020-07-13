@@ -1,3 +1,6 @@
 1.0.1:
   - First version
   - create_items_table.php
+1.0.2:
+  - Added a label column
+  - add_label_column.php

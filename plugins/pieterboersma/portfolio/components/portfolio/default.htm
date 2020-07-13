@@ -1,20 +1,15 @@
 {% for item in __SELF__.items() %}
-      <div class="five wide one offset container" style="float: left;">
-            <div class="thirteen wide column">
-                  <div class="top row">
-                        <h1 class="top bottom">{{ item.title }}</h1>
-                  </div>
-
+      <div class="thirteen wide container" style="float: left;">
+            <div class="seven wide one offset column">
                   <div class="fluid pointer image">
                         <a href="/{{item.identifier}}"><img src="/themes/portfolio/assets/images/{{item.identifier}}/portfolio.jpg"></a>
                   </div>
-            
-                  <div class="bottom top row">
+            </div>
+            <div class="three wide one offset column">
+                  <div class="row">
+                        <h1>{{ item.title }}</h1>
                         <p>{{ item.description }}</p>
-                  </div>
-
-                  <div>
-                        <a href="../{{item.identifier}}"></a><button class="inverted button">Bekijken</button></a>
+                        <button class="pink button">Bekijken</button>
                   </div>
             </div>
       </div>
