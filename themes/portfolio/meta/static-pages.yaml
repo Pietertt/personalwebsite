@@ -1,4 +1,6 @@
 static-pages:
-    valksverhuur: {  }
     index: {  }
     contact: {  }
+    portfolio:
+        portfolio-valksverhuur: {  }
+        portfolio-boekbinderij-van-der-meer: {  }

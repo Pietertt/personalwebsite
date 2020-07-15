@@ -1,0 +1,63 @@
+description = "Versie 2"
+
+[staticPage]
+useContent = 1
+default = 0
+==
+<html>
+      <head>
+            <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
+      </head>
+      <body>
+            {% partial "navigation" %}
+            <div class="thirteen wide double top container">
+                <div class="eleven wide one offset none light-gray container">
+                    <div class="six wide one offset column">
+                        {% page %}
+                  </div>
+                </div>
+            </div>
+
+            <div class="eleven wide one offset container">
+                <div class="thirteen wide column">
+                    {% placeholder one title="Afbeelding 1"%}
+                </div>
+            </div>
+
+            <div class="thirteen wide horizontal mobile container container">
+                <div class="eleven wide one offset top bottom horizontal light-gray horizontal mobile container">
+                    <div class="six wide one offset column">
+                        <div class="row">
+                            {% placeholder two title="Tekst 1" %}    
+                        </div>
+                    </div> 
+                    <div class="four wide one offset column">
+                        <div class="row">
+                            <div class="fluid image">
+                                {% placeholder three title="Afbeelding 2" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thirteen wide horizontal horizontal reverse mobile container">
+                <div class="five wide one offset wide column">
+                    <div class="row">
+                        <div class="fluid image">
+                            {% placeholder four title="Afbeelding 3" %}
+                        </div>
+                    </div>
+                </div> 
+                <div class="five wide one offset column">
+                    <div class="row">
+                        {% placeholder five title="Tekst 3" %}    
+                    </div>
+                </div>
+            </div>
+            
+      </body>
+      <footer>
+            {% partial "footer" %}
+      </footer>
+</html>

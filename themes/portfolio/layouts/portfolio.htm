@@ -1,0 +1,43 @@
+description = "Portfolio"
+
+[staticPage]
+useContent = 1
+default = 0
+==
+use pieterboersma\Portfolio\Models\Item;
+
+function onStart(){
+$this['items'] = Item::all();
+}
+==
+<html>
+
+<head>
+    <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
+</head>
+
+<body>
+    {% partial "navigation" %}
+    {% for item in items %}
+        <div class="thirteen wide horizontal reverse mobile container" style="float: left;">
+            <div class="seven wide one offset column">
+                <div class="fluid pointer image">
+                    <a href="/{{item.identifier}}"><img
+                            src="/themes/portfolio/assets/images/{{item.identifier}}/portfolio.jpg"></a>
+                </div>
+            </div>
+            <div class="three wide one offset column">
+                <div class="row">
+                    <h2>{{ item.title }}</h2>
+                    <p>{{ item.description }}</p>
+                    <a href="/portfolio/{{item.identifier}}"><button class="pink button">Bekijken</button></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+<footer>
+    {% partial "footer" %}
+</footer>
+
+</html>
