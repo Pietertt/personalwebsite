@@ -1,0 +1,6 @@
+name: Blog Category
+form: $/pieterboersma/portfolio/models/item/fields.yaml
+modelClass: pieterboersma\portfolio\models\Item
+
+create:
+  title: New Blog Post

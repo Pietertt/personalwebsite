@@ -1,0 +1,13 @@
+fields:
+  title:
+    label: Title of item
+
+  description:
+    label: Description of item
+
+  identifier:
+    label: Identifier
+
+  labels:
+    label: Label
+
