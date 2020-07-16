@@ -5,6 +5,7 @@
     use October\Rain\Support\Facades\Flash;
     use Backend\Facades\BackendMenu;
     use Backend\Classes\Controller;
+    use Illuminate\Support\Facades\Redirect;
 
     use \pieterboersma\Portfolio\Models\Item;
 
@@ -21,7 +22,7 @@
             parent::__construct();
             BackendMenu::setContext('Pieterboersma.Portfolio', 'portfolio', 'items');
 
-            $this->pageTitle = 'Voeg portfolio items toe';
+            $this->pageTitle = 'Beheer je portfolio items';
         }
     
         public function index(){
@@ -78,6 +79,18 @@
             $item->save();
 
             Flash::success("Succesvol opgeslagen");
+            return Redirect::to(Backend::url('pieterboersma/portfolio/items'));
+        }
+
+        public function onDeletes($id){
+            $data = post();
+
+            $item = Item::find($id);
+
+            $item->delete();
+
+            Flash::success("Item succesvol verwijderd");
+            return Redirect::to(Backend::url('pieterboersma/portfolio/items'));
         }
     }
 ?>

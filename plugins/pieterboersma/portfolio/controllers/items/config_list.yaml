@@ -4,5 +4,3 @@ modelClass: pieterboersma\portfolio\Models\item
 
 toolbar:
   buttons: list_toolbar
-  search:
-    prompt: Find records
