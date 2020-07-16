@@ -3,17 +3,16 @@ useContent = 1
 default = 0
 ==
 <html>
-      <head>
-            <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
-      </head>
-      <body>
-            {% partial "navigation" %}
-            {% page %}
-            
-      </body>
-      <footer>
-            {% partial "footer" %}
-      </footer>
+    <head>
+        {% partial "header" %}
+    </head>
+    <body>
+        {% partial "navigation" %}
+        {% page %}      
+    </body>
+    <footer>
+        {% partial "footer" %}
+    </footer>
 </html>
 
 
