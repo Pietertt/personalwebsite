@@ -4,3 +4,6 @@
 1.0.2:
   - Added a label column
   - add_label_column.php
+1.0.3:
+  - Added updated and created columns
+  - add_updated_created_columns.php

@@ -6,6 +6,8 @@
     use Backend\Facades\BackendMenu;
     use Backend\Classes\Controller;
 
+    use \pieterboersma\Portfolio\Models\Item;
+
     class Items extends Controller {
         public $implement = [
             'Backend.Behaviors.FormController',
@@ -26,16 +28,7 @@
          
         }
 
-        public function test(){
-            $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/columns.yaml');
-            $config->model = new \pieterboersma\portfolio\models\item;
-
-            $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
-
-            $this->vars['widget'] = $widget;
-        }
-
-        public function update(){
+        public function create(){
             $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/fields.yaml');
             $config->model = new \pieterboersma\portfolio\models\item;
 
@@ -44,11 +37,18 @@
             $this->vars['widget'] = $widget;
         }
 
-        public function onUpdate($id = null){
+        public function onCreate($id = null){
             $data = post();
 
-            trace_log($data);
-            Flash::success('Succesvol opgeslagen');
+            $item = new Item;
+            $item->title = $data["title"];
+            $item->description = $data["description"];
+            $item->identifier = $data["identifier"];
+            $item->labels = $data["labels"];
+
+            $item->save();
+
+            Flash::success("Succesvol opgeslagen");
         }
     }
 ?>
