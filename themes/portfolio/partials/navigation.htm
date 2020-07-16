@@ -1,9 +1,4 @@
 ==
-<!-- <div class="thirteen wide test bottom container">
-      <a class="testen {% if this.page.id == 'contact' %}active{% endif %}" href="/contact">Contact</a>
-      <a class="testen {% if this.page.id == 'portfolio' %}active{% endif %}" href="/portfolio">Portfolio</a>
-      <a class="testen {% if this.page.id == 'index' %}active{% endif %}" href="/">Home</a>
-</div> -->
 <nav role="navigation">
     <div id="menuToggle">
         <input id="action" type="checkbox" />
@@ -11,9 +6,9 @@
         <span></span>
         <span></span>
         <ul id="menu">
-            <li><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
-            <li><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
             <li><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">Home</a></li>
+            <li><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+            <li><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
         </ul>
     </div>
 </nav>

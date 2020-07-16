@@ -1,8 +1,7 @@
 @media only screen and (min-width: 768px) {
     #menu {
         list-style-type: none;
-        display: flex;
-        flex-direction: row-reverse;
+        
     }
 
     #menu li {
@@ -120,7 +119,7 @@
         padding: 0;
         padding-top: 50px;
         padding-left: 20px;
-        background: #ededed;
+        background: #FFFFFF;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;

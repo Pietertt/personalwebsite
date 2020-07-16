@@ -4,53 +4,36 @@ snippetName = "Contact"
 
 snippetProperties[email][title] = "E-mailadres"
 
-
-==
-function onStart(){
-      $this['colors'] = ["dark-blue", "blue", "light-blue", "pink", "white", "reverse"];
-}
 ==
 <form> 
       <div class="thirteen wide top bottom container">
-            <div class="thirteen wide column">
+            <div class="six wide one offset column">
                   <div class="half row">
                         <label>Voornaam + achternaam</label>
-                        <input type="text" name="name" placeholder="Je naam"
-                              v-bind:class="{ error: (errors && errors.name) }" 
-                              v-on:click="errors.name = null"
-                              v-bind:placeholder="(errors && errors.name) ? 'Dit veld is verplicht' : 'Je naam'" 
-                              v-model="field.name">
+                        <input type="text" name="name" placeholder="Je naam">
                   </div>
             </div>
       </div>
             
       <div class="thirteen wide top bottom container">
-            <div class="thirteen wide column">
+            <div class="six wide one offset column">
                   <div class="half row">
                         <label>E-mailadres</label>
-                        <input type="email" name="email" placeholder="Je e-mailadres"
-                              v-bind:class="{ error: (errors && errors.email) }" 
-                              v-on:click="errors.email = null"
-                              v-bind:placeholder="(errors && errors.email) ? 'Dit veld is verplicht' : 'Je e-mailadres'"  
-                              v-model="field.email">
+                        <input type="email" name="email" placeholder="Je e-mailadres">
                   </div>
             </div>
       </div>
 
       <div class="thirteen wide top bottom container">
-            <div class="thirteen wide column">
+            <div class="six wide one offset column">
                   <div class="half row">
                         <label>Bericht</label>
-                        <textarea name="message" rows="10" class="fluid" placeholder="Je bericht"
-                              v-bind:class="{ error: (errors && errors.message) }" 
-                              v-on:click="errors.message = null"
-                              v-bind:placeholder="(errors && errors.message) ? 'Dit veld is verplicht' : 'Je bericht'" 
-                              v-model="field.message"></textarea> 
+                        <textarea name="message" rows="10" class="fluid" placeholder="Je bericht"></textarea> 
                   </div>
             </div>
       </div>
       <div class="thirteen wide top bottom container">
-            <div class="four wide column">
+            <div class="six wide one offset column">
                   <div class="half row">
                         <button class="pink button">Verzenden</span></button>
                         <!--<button v-if="loading" class="pink button"><div class="loader"><div class="dot 1"></div><div class="dot 2"></div><div class="dot 3"></div></div></button>-->
