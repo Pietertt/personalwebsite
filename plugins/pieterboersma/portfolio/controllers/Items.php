@@ -25,7 +25,12 @@
         }
     
         public function index(){
-         
+            $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/columns.yaml');
+            $config->model = new \pieterboersma\portfolio\models\item;
+
+            $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
+
+            $this->vars['widget'] = $widget;
         }
 
         public function create(){

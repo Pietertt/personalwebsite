@@ -1,7 +1,7 @@
 <?php
       namespace pieterboersma\Portfolio\Models;
 
-      use Illuminate\Database\Eloquent\Model;
+      use \Model;
 
       class Item extends Model {
             protected $table = "october_items";
