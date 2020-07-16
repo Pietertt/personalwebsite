@@ -11,3 +11,8 @@ fields:
   labels:
     label: Labels
 
+  file:
+    label: Bestand
+    type: mediafinder
+    
+

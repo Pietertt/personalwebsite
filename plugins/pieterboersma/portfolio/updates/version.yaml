@@ -7,3 +7,6 @@
 1.0.3:
   - Added updated and created columns
   - add_updated_created_columns.php
+1.0.4:
+  - Added file uploads
+  - add_file_upload_column.php

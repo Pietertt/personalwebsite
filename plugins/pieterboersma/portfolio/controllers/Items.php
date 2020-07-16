@@ -61,6 +61,7 @@
             $item->description = $data["description"];
             $item->identifier = $data["identifier"];
             $item->labels = $data["labels"];
+            $item->file = $data["file"];
 
             $item->save();
 
@@ -75,6 +76,7 @@
             $item->description = $data["description"];
             $item->identifier = $data["identifier"];
             $item->labels = $data["labels"];
+            $item->file = $data["file"];
 
             $item->save();
 

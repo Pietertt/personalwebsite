@@ -6,3 +6,5 @@ columns:
     width: 40%
   labels:
     label: Labels
+  file:
+    label: Afbeelding
