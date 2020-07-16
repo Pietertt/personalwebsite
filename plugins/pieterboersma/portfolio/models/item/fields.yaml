@@ -1,9 +1,9 @@
 fields:
   title:
-    label: Title of item
+    label: Titel
 
   description:
-    label: Description of item
+    label: Beschrijving
 
   identifier:
     label: Identifier

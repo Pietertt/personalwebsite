@@ -1,0 +1,3 @@
+title: Blog Posts
+list: ~/pluginjs/pieterboersma/portfolio/models/items/columns.yaml
+modelClass: pieterboersma\portfolio\Models\item
