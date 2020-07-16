@@ -1,0 +1,11 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('pieterboersma/portfolio/items') ?>">Alle items</a></li>
+        <li><?= $this->pageTitle ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?= Form::open() ?>
+<?= $widget->render() ?>
+<button data-request="onUpdate" class="btn btn-primary">Opslaan</button>
+<?= Form::close() ?>

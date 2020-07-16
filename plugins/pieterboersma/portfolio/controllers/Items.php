@@ -27,9 +27,10 @@
         public function index(){
             $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/columns.yaml');
             $config->model = new \pieterboersma\portfolio\models\item;
+            $config->recordUrl = 'pieterboersma/portfolio/items/update/:id';
 
             $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
-
+            $widget->bindToController();
             $this->vars['widget'] = $widget;
         }
 
@@ -42,7 +43,30 @@
             $this->vars['widget'] = $widget;
         }
 
-        public function onCreate($id = null){
+        public function update($id = null){
+            $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/fields.yaml');
+            $config->model = Item::find($id);
+
+            $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+
+            $this->vars['widget'] = $widget;
+        }
+
+        public function onUpdate($id = null){
+            $data = post();
+
+            $item = Item::find($id);
+            $item->title = $data["title"];
+            $item->description = $data["description"];
+            $item->identifier = $data["identifier"];
+            $item->labels = $data["labels"];
+
+            $item->save();
+
+            Flash::success("Succesvol opgeslagen");
+        }
+
+        public function onCreate(){
             $data = post();
 
             $item = new Item;

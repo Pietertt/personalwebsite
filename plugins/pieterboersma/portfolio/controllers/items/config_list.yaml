@@ -1,7 +1,6 @@
 title: Blog Posts
 list: ~/plugins/pieterboersma/portfolio/models/items/columns.yaml
 modelClass: pieterboersma\portfolio\Models\item
-recordUrl: pieterboersma/portfolio/items/update/:id
 
 toolbar:
   buttons: list_toolbar
