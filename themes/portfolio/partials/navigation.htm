@@ -5,16 +5,15 @@
       <a class="testen {% if this.page.id == 'index' %}active{% endif %}" href="/">Home</a>
 </div> -->
 <nav role="navigation">
-            <div id="menuToggle" style="float: left;">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                    <a href="#"><li>Homepagina</li></a>
-                    <a href="#"><li>Portfolio</li></a>
-                    <a href="#"><li>Contact</li></a>
-                </ul>
-            </div>
-            <h2 style="float: left;">Pieter Boersma</h2>
+    <div id="menuToggle">
+        <input id="action" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+            <li><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
+            <li><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+            <li><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">Home</a></li>
+        </ul>
+    </div>
 </nav>
