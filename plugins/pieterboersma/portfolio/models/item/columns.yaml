@@ -1,3 +1,8 @@
 columns:
   title:
     label: Title
+  description:
+    label: Description
+    width: 40%
+  labels:
+    label: Labels
