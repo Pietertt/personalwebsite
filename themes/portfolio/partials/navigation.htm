@@ -6,9 +6,10 @@
         <span></span>
         <span></span>
         <ul id="menu">
-            <li><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">Home</a></li>
-            <li><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
-            <li><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
+            <li class="left"><h2 class="logo">Pieter Boersma</h2></li>
+            <li class="right"><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">Home</a></li>
+            <li class="right"><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+            <li class="right"><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
         </ul>
     </div>
 </nav>

@@ -1,11 +1,22 @@
 @media only screen and (min-width: 768px) {
     #menu {
-        list-style-type: none;
-        float: right;
+        list-style-type: none; 
+        margin: 0;
+        padding: 0;
+        overflow: hidden;   
     }
 
-    #menu li {
+    .logo {
+        color: var(--pink);
+    }
+
+    #menu li.left {
         float: left;
+        margin-left: 20px;
+    }
+
+    #menu li.right {
+        float: right;
     }
 
     input[type="checkbox"]#action {
