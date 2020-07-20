@@ -1,69 +1,10 @@
-/* .navigation {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.navigation > li {
-    display: block;
-}
-
-@media only screen and (min-width: 768px) {
-    .left {
-        float: left;
-    }
-    
-    .right {
-        float: right;
-    }
-
-    .navigation {
-        flex-direction: row;
-    }
-
-    .navigation > li  {
-        display: inline;
-    }
-
-
-    .navigation > li > a {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 30px;
-        padding-right: 30px;
-        border-radius: 3.5px;
-        border: 2px solid var(--dark-gray);
-        color: var(--dark-gray);
-        outline: none;
-        cursor: pointer;
-        font-size: 16px;
-        display: block;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .navigation li h2 {
-        color: var(--pink);
-        margin: 0;
-        padding: 0;
-        line-height: 0em;
-    }
-
-    .navigation li a.active {
-        border-color: var(--pink) !important;
-        color: var(--pink) !important;
-    }
-} */
-
 .menu-toggle {
     display: inline-block;
-    padding: .75em 15px;
+    padding: 20px 20px;
+    width: 15px;
+    height: 15px;
     line-height: 1em;
-    font-size: 1em;
+    font-size: 2em;
     outline: none;
 }
 
@@ -76,7 +17,6 @@
     height: 100%;
     overflow-y: scroll;
     overflow-x: visible;
-
     z-index: 999;
 }
   
@@ -84,21 +24,34 @@
     list-style: none;
     margin: 0;
     padding: 2.5em 0 0;
-    /* min-height: 100%; */
     background: #FFFFFF;
+}
+
+#main-menu > ul > li:first-child {
+    margin-top: 20px;
+}
+
+#main-menu > ul > li > a {
+    line-height: 1px;
 }
   
 .main-menu a {
     display: block;
-    padding: .75em 15px;
+    padding: .75em 20px;
     line-height: 1em;
-    font-size: 1em;
+    font-size: 2em;
     color: #000000;
     text-decoration: none;
 }
 
+.main-menu a.active {
+    color: var(--pink) !important;
+}
+
 .main-menu .menu-close {
     position: absolute;
+    font-size: 2em;
+    padding: 20px;
 }
 
 .main-menu:target, .main-menu[aria-expanded="true"] {
@@ -140,6 +93,14 @@
     .menu-toggle,
     .main-menu .menu-close {
         display: none;
+    }
+
+    #main-menu > ul > li:first-child {
+        margin-top: 0px;
+    }
+    
+    #main-menu > ul > li > a {
+        line-height: normal;
     }
     
     .main-menu {
