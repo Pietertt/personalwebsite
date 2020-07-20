@@ -13,22 +13,28 @@ $this['items'] = Item::all();
 <html>
     <head>
         {% partial "header" %}
+        <style>
+            body {
+                background-color: var(--light-gray);
+            }
+        </style>
     </head>
     <body>
         {% partial "navigation" %}
         {% for item in items %}
-            <div class="five wide one offset horizontal reverse mobile container" style="float: left;">
+            <div class="five wide one offset horizontal reverse mobile bottom container" style="float: left;">
                 <div class="thirteen wide column">
                     <div class="row">
                         <div class="fluid pointer image">
-                            <a href="/portfolio/{{item.identifier}}"><img
-                                    src="/storage/app/media{{item.file}}"></a>
+                            <a href="/portfolio/{{item.identifier}}">
+                                <img src="/storage/app/media{{item.file}}">
+                            </a>
                         </div>
                     </div>
                     <div class="row">
+                        <p class="subtitle">{{ item.labels }}</p>
                         <h2>{{ item.title }}</h2>
-                        <p>{{ item.description }}</p>
-                        <a href="/portfolio/{{item.identifier}}"><button class="pink button">Bekijken</button></a>
+                        <!-- <a href="/portfolio/{{item.identifier}}"><button class="pink button">Bekijken</button></a> -->
                     </div>
                 </div>
             </div>

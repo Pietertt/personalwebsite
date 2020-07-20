@@ -1,0 +1,24 @@
+description = "Standaard"
+useContent = 1
+[staticPage]
+default = 0
+==
+<html>
+    <head>
+        {% partial "header" %}
+    </head>
+    <body>
+        {% partial "navigation" %}
+        <div class="eleven wide one offset bottom container">
+            <div class="thirteen wide column">
+                {% page %}      
+            </div>
+        </div>
+    </body>
+    <footer>
+        {% partial "footer" %}
+    </footer>
+</html>
+
+
+

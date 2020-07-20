@@ -253,8 +253,8 @@ a {
 }
 
 .underline {
-      padding-bottom: 3px;
-      border-bottom: 3px solid;
+      padding-bottom: 2px;
+      border-bottom: 2px solid;
 }
 
 span.underline:hover {
@@ -422,7 +422,23 @@ h1 {
 
 p.subtitle {
       line-height: 0px;
-      /* opacity: 0.7; */
+      opacity: 0.3;
+}
+
+label.avg {
+    display: block;
+    padding-left: 30px;
+    text-indent: -30px;
+}
+input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
 }
 
 /* ------------------------------------------------------- 
