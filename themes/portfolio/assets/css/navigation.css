@@ -1,25 +1,34 @@
-.navigation {
+/* .navigation {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    
+    flex-direction: column;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
+.navigation > li {
+    display: block;
 }
 
 @media only screen and (min-width: 768px) {
-    .navigation > span > li  {
+    .left {
+        float: left;
+    }
+    
+    .right {
+        float: right;
+    }
+
+    .navigation {
+        flex-direction: row;
+    }
+
+    .navigation > li  {
         display: inline;
     }
+
 
     .navigation > li > a {
         padding-top: 15px;
@@ -48,36 +57,123 @@
         border-color: var(--pink) !important;
         color: var(--pink) !important;
     }
+} */
+
+.menu-toggle {
+    display: inline-block;
+    padding: .75em 15px;
+    line-height: 1em;
+    font-size: 1em;
+    color: #333;
+}
+  
+.menu-toggle:hover, .menu-toggle:focus {
+    color: #c00;
 }
 
-/* #navigation */
+.main-menu {
+    position: absolute;
+    display: none;
+    left: -200px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+    transition: left 0.3s ease,
+    box-shadow 0.3s ease;
+    z-index: 999;
+}
+  
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 2.5em 0 0;
+    -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+    -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+    box-shadow: -8px 0 8px rgba(0,0,0,.5);
+    min-height: 100%;
+    background: #FFFFFF;
+}
+  
+.main-menu a {
+    display: block;
+    padding: .75em 15px;
+    line-height: 1em;
+    font-size: 1em;
+    color: #000000;
+    text-decoration: none;
+}
 
-/* @media only screen and (min-width: 768px) {
-    #menu {
-        list-style-type: none; 
-        margin: 0;
-        padding: 0;
-        overflow: hidden;   
+.main-menu .menu-close {
+    position: absolute;
+}
+
+.main-menu:target, .main-menu[aria-expanded="true"] {
+    display: block;
+    left: 0;
+    outline: none;
+    -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+    -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+    box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
+  
+.main-menu:target .menu-close, .main-menu[aria-expanded="true"] .menu-close {
+    z-index: 1001;
+}
+  
+.main-menu:target ul, .main-menu[aria-expanded="true"] ul {
+    position: relative;
+    z-index: 1000;
+}
+  
+.main-menu:target + .backdrop, .main-menu[aria-expanded="true"] + .backdrop{
+    position: absolute;
+    display: block;  
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background: #000;
+    background: rgba(0,0,0,.85);
+    cursor: default;
+}
+  
+@supports (position: fixed) {
+    .main-menu,
+    .main-menu:target + .backdrop,
+    .main-menu[aria-expanded="true"] + .backdrop {
+        position: fixed;
     }
-
-    .logo {
-        color: var(--pink);
-    }
-
-    #menu li.left {
-        float: left;
-        margin-left: 20px;
-    }
-
-    #menu li.right {
-        float: right;
-    }
-
-    input[type="checkbox"]#action {
+}
+  
+@media (min-width: 768px) {
+    .menu-toggle,
+    .main-menu .menu-close {
         display: none;
     }
-
-    #menu li a {
+    
+    .main-menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        height: auto;
+        display: block;
+    }
+    
+    .main-menu ul {
+        display: flex;
+        padding: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        height: auto;
+        width: auto;
+        background: none;
+    }
+    
+    .main-menu a {
         padding-top: 15px;
         padding-bottom: 15px;
         padding-left: 30px;
@@ -89,114 +185,12 @@
         cursor: pointer;
         font-size: 16px;
         display: block;
-        margin-top: 10px;
         margin-left: 10px;
-        margin-right: 10px;    
+        margin-right: 10px;
     }
 
-    .active {
+    .main-menu a.active {
         border-color: var(--pink) !important;
         color: var(--pink) !important;
     }
 }
-
-@media only screen and (max-width: 768px) {
-    #menu {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #menuToggle {
-        display: block;
-        z-index: 1; 
-        -webkit-user-select: none;
-        user-select: none;
-    }
-    
-    #menuToggle a {
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
-    }
-    
-    #menuToggle input {
-        display: block;
-        width: 60px;
-        height: 40px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0; 
-        z-index: 2; 
-        -webkit-touch-callout: none;
-    }
-    
-    #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        position: relative;
-        top: 20px;
-        left: 20px;
-        margin-bottom: 5px;
-        margin-right: 40px;
-        position: relative;
-        background: var(--pink);
-        border-radius: 3px; 
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), 
-                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    opacity 0.55s ease;
-    }
-    
-    #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-    }
-    
-    #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-    }
-
-    #menuToggle input:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: var(--pink);
-    }
-
-    #menuToggle input:checked ~ span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-    
-    #menuToggle input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-    }
-
-    #menu {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0px;
-        margin: 0;
-        padding: 0;
-        padding-top: 50px;
-        padding-left: 20px;
-        background: #FFFFFF;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-        transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    }
-    
-    #menu li {
-        padding: 10px 0;
-        font-size: 22px;
-    }
-
-    #menuToggle input:checked ~ ul {
-        transform: none;
-    }
-} */
