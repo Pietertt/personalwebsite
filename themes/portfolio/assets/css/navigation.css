@@ -64,11 +64,7 @@
     padding: .75em 15px;
     line-height: 1em;
     font-size: 1em;
-    color: #333;
-}
-  
-.menu-toggle:hover, .menu-toggle:focus {
-    color: #c00;
+    outline: none;
 }
 
 .main-menu {
@@ -80,8 +76,7 @@
     height: 100%;
     overflow-y: scroll;
     overflow-x: visible;
-    transition: left 0.3s ease,
-    box-shadow 0.3s ease;
+
     z-index: 999;
 }
   
@@ -89,10 +84,7 @@
     list-style: none;
     margin: 0;
     padding: 2.5em 0 0;
-    -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
-    -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
-    box-shadow: -8px 0 8px rgba(0,0,0,.5);
-    min-height: 100%;
+    /* min-height: 100%; */
     background: #FFFFFF;
 }
   
@@ -113,9 +105,6 @@
     display: block;
     left: 0;
     outline: none;
-    -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
-    -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
-    box-shadow: 3px 0 12px rgba(0,0,0,.25);
 }
   
 .main-menu:target .menu-close, .main-menu[aria-expanded="true"] .menu-close {
@@ -135,8 +124,7 @@
     width: 100%;
     height: 100%;
     z-index: 998;
-    background: #000;
-    background: rgba(0,0,0,.85);
+    background: #FFFFFF;
     cursor: default;
 }
   
@@ -158,16 +146,21 @@
         position: relative;
         left: auto;
         top: auto;
+        margin: 0;
+        padding: 0;
         height: auto;
         display: block;
+        width: auto;
+        float: right;
+        margin-right: 7.69%;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     
     .main-menu ul {
         display: flex;
         padding: 0;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
+        margin: 0;
         height: auto;
         width: auto;
         background: none;
@@ -186,7 +179,6 @@
         font-size: 16px;
         display: block;
         margin-left: 10px;
-        margin-right: 10px;
     }
 
     .main-menu a.active {
