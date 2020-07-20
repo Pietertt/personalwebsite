@@ -17,11 +17,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .navigation li {
+    .navigation > span > li  {
         display: inline;
     }
 
-    .navigation li a {
+    .navigation > li > a {
         padding-top: 15px;
         padding-bottom: 15px;
         padding-left: 30px;
@@ -34,7 +34,7 @@
         font-size: 16px;
         display: block;
         margin-left: 10px;
-        margin-right: 10px;    
+        margin-right: 10px;
     }
 
     .navigation li h2 {
