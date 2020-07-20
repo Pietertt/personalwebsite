@@ -17,14 +17,14 @@ $this['items'] = Item::all();
     <body>
         {% partial "navigation" %}
         {% for item in items %}
-            <div class="thirteen wide horizontal reverse mobile container" style="float: left;">
-                <div class="six wide one offset column">
-                    <div class="fluid pointer image">
-                        <a href="/portfolio/{{item.identifier}}"><img
-                                src="/storage/app/media{{item.file}}"></a>
+            <div class="five wide one offset horizontal reverse mobile container" style="float: left;">
+                <div class="thirteen wide column">
+                    <div class="row">
+                        <div class="fluid pointer image">
+                            <a href="/portfolio/{{item.identifier}}"><img
+                                    src="/storage/app/media{{item.file}}"></a>
+                        </div>
                     </div>
-                </div>
-                <div class="four wide one offset column">
                     <div class="row">
                         <h2>{{ item.title }}</h2>
                         <p>{{ item.description }}</p>
