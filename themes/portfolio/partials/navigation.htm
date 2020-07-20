@@ -1,15 +1,13 @@
 ==
-<nav role="navigation">
-    <div id="menuToggle">
-        <input id="action" type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
-            <li class="left"><h2 class="logo">Pieter Boersma</h2></li>
-            <li class="right"><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">Home</a></li>
-            <li class="right"><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
-            <li class="right"><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
+<div class="thirteen wide none container">
+    <div class="seven wide column">
+
+    </div>
+    <div class="six wide column">
+        <ul class="right navigation">
+            <li><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">Home</a></li>
+            <li><a href="/portfolio" class="{% if this.page.id == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+            <li><a href="/contact" class="{% if this.page.id == 'contact' %}active{% endif %}">Contact</a></li>
         </ul>
     </div>
-</nav>
+</div>
