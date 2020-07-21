@@ -14,6 +14,11 @@ snippetProperties[background_color][options][4] = "Rood"
 snippetProperties[background_color][options][5] = "Wit"
 snippetProperties[background_color][options][6] = "Omgekeerd"
 
+snippetProperties[target][title]      = "Nieuw tabblad"
+snippetProperties[target][type]       = "checkbox"
+snippetProperties[target][options][0] = 0
+snippetProperties[target][options][1] = 1
+
 
 ==
 function onStart(){
@@ -21,5 +26,5 @@ function onStart(){
 }
 ==
 <div class="row">
-      <a href="{{link}}"><button class="{{colors[background_color - 1]}} button">{{text}}</button></a>
+      <a {% if target == 1 %} target="_blank" {% endif %} href="{{link}}"><button class="{{colors[background_color - 1]}} button">{{text}}</button></a>
 </div>

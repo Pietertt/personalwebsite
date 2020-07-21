@@ -16,9 +16,15 @@ $this['items'] = Item::all();
     </head>
     <body>
         {% partial "navigation" %}
-        
+        <div class="thirteen wide double container">
+            <div class="thirteen wide bottom container">
+                <div class="eleven wide one offset column">
+                    {% page %}
+                </div>
+            </div>
+        </div>
         {% for item in items %}
-            <div class="five wide one offset horizontal reverse mobile double container" style="float: left;">
+            <div class="five wide one offset horizontal reverse mobile top padding container" style="float: left;">
                 <div class="thirteen wide light-gray bottom container">
                     <div class="eleven wide one offset column">
                         <div class="row">
