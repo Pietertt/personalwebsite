@@ -89,6 +89,17 @@ p {
     [class*="padding"] {
         margin-bottom: 20px !important;
     }
+
+    [class*="t padding"] {
+        padding-bottom: 20px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    [class*="t padding"] {
+        padding-bottom: 40px !important;
+    }
 }
 
 [class*="double"]{
