@@ -7,6 +7,8 @@
     use Backend\Classes\Controller;
     use Illuminate\Support\Facades\Redirect;
 
+    use pieterboersma\contactform\models\Settings;
+
     class Overview extends Controller {
 
         public function __construct(){   
@@ -17,7 +19,14 @@
         }
     
         public function index(){
-            return "Hi";
+            $settings = Settings::instance();
+            $settings->api_key = 'ABCD';
+            $settings->save();
+
+            $t = Settings::get('api_key');
+
+            $this->vars['test'] = $t;
+
         }
     }
 ?>

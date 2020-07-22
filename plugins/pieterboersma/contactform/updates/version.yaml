@@ -1,1 +1,7 @@
 1.0.1: First version
+1.0.2:
+  - Database connection
+  - create_contact_table.php
+1.0.3:
+  - Removed database connection
+  - remove_contact_table.php
