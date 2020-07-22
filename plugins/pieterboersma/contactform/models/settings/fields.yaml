@@ -1,5 +1,0 @@
-fields:
-    test:
-        label: Blog Title
-        description: The title for this blog
-        type: text

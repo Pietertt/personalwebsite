@@ -9,6 +9,8 @@
 
     use pieterboersma\contactform\models\Settings;
 
+    use \pieterboersma\contactform\Models\Contact;
+
     class Overview extends Controller {
 
         public function __construct(){   
@@ -19,14 +21,14 @@
         }
     
         public function index(){
-            $settings = Settings::instance();
-            $settings->api_key = 'ABCD';
-            $settings->save();
+            $test = Contact::all();
 
-            $t = Settings::get('api_key');
+            $this->vars['email'] = $test;
 
-            $this->vars['test'] = $t;
+        }
 
+        public function onTest(){
+            Flash::success("Succesvol opgeslagen");
         }
     }
 ?>

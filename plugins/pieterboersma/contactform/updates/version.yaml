@@ -5,3 +5,6 @@
 1.0.3:
   - Removed database connection
   - remove_contact_table.php
+1.0.4:
+  - Database table init
+  - create_contact_table_1.php

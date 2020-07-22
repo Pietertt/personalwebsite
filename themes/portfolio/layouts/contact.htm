@@ -1,5 +1,6 @@
 description = "Contact"
 [staticPage]
+[contactform]
 useContent = 1
 default = 0
 ==
@@ -14,8 +15,7 @@ default = 0
                         {% page %}
                   </div>
             </div>
-            {% placeholder contact title="Contact" %}
-            
+            {% component 'contactform' %}
       </body>
       <footer>
             {% partial "footer" %}
