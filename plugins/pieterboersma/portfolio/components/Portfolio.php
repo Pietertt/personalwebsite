@@ -12,7 +12,6 @@ class Portfolio extends \Cms\Classes\ComponentBase {
               ];
           }
       
-          // This array becomes available on the page as {{ component.posts }}
           public function items()
           {
             $items = Item::all();

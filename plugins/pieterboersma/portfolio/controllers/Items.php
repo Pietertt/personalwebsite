@@ -27,7 +27,7 @@
     
         public function index(){
             $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/columns.yaml');
-            $config->model = new \pieterboersma\portfolio\models\item;
+            $config->model = new \pieterboersma\portfolio\models\Item;
             $config->recordUrl = 'pieterboersma/portfolio/items/update/:id';
 
             $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
@@ -37,7 +37,7 @@
 
         public function create(){
             $config = $this->makeConfig('$/pieterboersma/portfolio/models/item/fields.yaml');
-            $config->model = new \pieterboersma\portfolio\models\item;
+            $config->model = new \pieterboersma\portfolio\models\Item;
 
             $widget = $this->makeWidget('Backend\Widgets\Form', $config);
 
