@@ -15,7 +15,7 @@
 
         public function registerComponents(){
             return [
-                'pieterboersma\contactform\components\form' => 'contactform'
+                'pieterboersma\contactform\components\Form' => 'contactform'
             ];
         }
 
