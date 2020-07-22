@@ -112,12 +112,6 @@ p {
       margin-bottom: 60px;
 }
 
-[class*="none"]{
-      margin-bottom: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-}
-
 [class*="wrap"] {
       flex-wrap: wrap;
 }
@@ -188,7 +182,7 @@ p {
       margin-right: 0;
 }
 
-[class*="one offset"]     { margin-left: 20px; width: calc(100% - 40px);   }
+[class*="one offset"]     { margin-left: 10px; width: calc(100% - 20px); }
 
 [class*="left floated"]{
       float: none;
@@ -295,55 +289,6 @@ li.header {
 ul > li {
       padding: 5px;
 }
-
-/* ------------------------------------------------------- 
-      Navigation
-------------------------------------------------------- */
-/*
-a.testen{
-      padding-left: 30px;
-      padding-right: 30px;
-      border-radius: 3.5px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      background-color: #FFFFFF;
-      color: var(--dark-gray);
-      border: 2px solid var(--dark-gray);
-      padding-top: 12px;
-      padding-bottom: 12px;
-      margin-bottom: 20px;
-      margin-top: 0px;
-      margin-left: 10px;
-      margin-right: 10px;
-      text-align: center;
-}
-
-a.testen:first-child {
-      margin-top: 0px;
-}
-
-a.testen:last-child {
-      margin-bottom: 0px;
-}
-
-@media only screen and (min-width: 768px) { 
-      a.testen {
-            margin-right: 20px;
-            margin-top: 0px;
-            margin-bottom: 0px;
-      }
-}
-
-a.active {
-      color: var(--pink);
-      border-color: var(--pink);
-}
-
-a.testen {
-      text-decoration: none;
-}*/
 
 /* ------------------------------------------------------- 
       Menu
@@ -455,7 +400,7 @@ input[type="checkbox"] {
     height: 13px;
     padding: 0;
     margin: 0;
-    margin-right: 10px;
+    margin-right: 15px;
     vertical-align: bottom;
     position: relative;
     top: -1px;
@@ -727,4 +672,10 @@ th {
       margin-top: 25px;
       margin-bottom: 25px;
       border-radius: 100%;
+}
+
+[class*="none"]{
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
