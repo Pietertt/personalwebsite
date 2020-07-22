@@ -13,13 +13,19 @@
             ];
         }
 
+        public function registerComponents(){
+            return [
+                'pieterboersma\contactform\components\form' => 'contactform'
+            ];
+        }
+
         public function registerNavigation(){               
             return [
-                'blog' => [
+                'contactform' => [
                     'label'       => 'contact',
-                    'url'         => Backend::url('pieterboersma/contact/overview'),
+                    'url'         => Backend::url('pieterboersma/contactform/overview'),
                     'icon'        => 'icon-newspaper-o',
-                    'permissions' => ['pieterboersma.contact.*'],
+                    'permissions' => ['pieterboersma.contactform.*'],
                     'order'       => 500
                 ]
             ];
