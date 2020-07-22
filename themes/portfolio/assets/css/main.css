@@ -403,7 +403,7 @@ input[type="checkbox"] {
     margin-right: 15px;
     vertical-align: bottom;
     position: relative;
-    top: -1px;
+    top: -3px;
     -webkit-appearance: none;
 }
 
