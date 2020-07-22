@@ -8,5 +8,9 @@
                 'description' => 'Generates a contact form'
             ];
         }
+
+        public function onTest(){
+            print(input("name") . input("email") . input("message"));
+        }
     }
 ?>
