@@ -37,7 +37,7 @@
 
             $vars = ['name' => 'Joe', 'user' => 'Mary'];
 
-            mail("pieterboersma20@gmail.com", "Bericht van " . $name . "(" . $email . ")", $message);
+            mail("info@pieterboersma.nl", "Bericht van " . $name . "(" . $email . ")", $message);
 
             Flash::success("Je bericht is verzonden!");
         }
