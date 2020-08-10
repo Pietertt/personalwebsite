@@ -1,6 +1,6 @@
 FROM php:7.4-fpm-alpine
 
-WORKDIR /
+WORKDIR /var/www
 
 RUN apk update
 
@@ -26,8 +26,8 @@ RUN docker-php-ext-enable pdo_mysql
 # Get composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-COPY . /
+COPY . /var/www
 
-#RUN composer install
+RUN composer install
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0"]
