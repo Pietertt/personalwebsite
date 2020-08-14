@@ -65,6 +65,7 @@ $this['items'] = Item::all();
                         <div class="eleven wide one offset column">
                             <h2>{{ item.title }}</h2>
                             <p>{{ item.description }}</p>
+                            <a href="/portfolio/{{item.identifier}}"><button class="link-button">Bekijken</button></a>
                         </div>
                     </div>
                 </div>

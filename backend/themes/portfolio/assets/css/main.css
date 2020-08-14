@@ -304,7 +304,7 @@ ul > li {
       Buttons
 ------------------------------------------------------- */
 
-.button {
+[class*="button"] {
       padding-top: 15px;
       padding-bottom: 15px;
       padding-left: 30px;
@@ -319,21 +319,16 @@ ul > li {
 }
 
 @media only screen and (min-width: 768px) {
-      .button {
+      [class*="button"] {
             margin: 0;
       }
 }
 
-.small-button {
-      padding-top: 7px;
-      padding-bottom: 7px;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 2px;
-      border: 1px solid transparent;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
+[class*="link"] {
+    color: var(--pink);
+    background-color: #FFFFFF;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 [class*="inactive"] {
