@@ -15,7 +15,7 @@ $this['items'] = Item::all();
         {% partial "header" %}
         <title>Pieter Boersma - mijn portfolio</title>
     </head>
-    <body>
+    <body class="light-gray">
       
         <!-- <div class="thirteen wide light-gray double container">
             <div class="thirteen wide gray bottom container">
@@ -26,55 +26,36 @@ $this['items'] = Item::all();
         </div>
  -->
 
-
-        <!-- {% for item in items %}
-            <div class="five wide one offset horizontal reverse mobile top padding container" style="float: left;">
-                <div class="thirteen wide light-gray bottom container">
-                    <div class="eleven wide one offset column">
-                        <div class="row">
-                            <div class="fluid pointer image">
-                                <a href="/portfolio/{{item.identifier}}">
-                                    <img src="/storage/app/media{{item.file}}">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p class="subtitle">{{ item.labels }}</p>
-                            <h2>{{ item.title }}</h2>
-                             <a href="/portfolio/{{item.identifier}}"><button class="pink button">Bekijken</button></a> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endfor %} -->
-
         {% partial "navigation" %}
 
-        <div class="thirteen wide none light-gray container">
+        <div class="thirteen wide double light-gray container">
+            <div class="seven wide two offset column">
+                {% page %}
+            </div>
+        </div>
 
+        <!-- <div class="thirteen wide none light-gray container"> -->
 
-        {% for item in items %}
-            <div class="five wide one offset container">
-                <div class="thirteen wide white border column">
-                    <div class="bottom row">
-                        <div class="image">
-                            <img src="/storage/app/media{{item.file}}">
+            {% for item in items %}
+                <div class="five wide one offset container">
+                    <div class="thirteen wide white border column">
+                        <div class="bottom row">
+                            <div class="half-bordered image">
+                                <img src="/storage/app/media{{item.file}}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="top row">
-                        <div class="eleven wide one offset column">
-                            <h2>{{ item.title }}</h2>
-                            <p>{{ item.description }}</p>
-                            <a href="/portfolio/{{item.identifier}}"><button class="link-button">Bekijken</button></a>
+                        <div class="top row">
+                            <div class="eleven wide one offset column">
+                                <h2>{{ item.title }}</h2>
+                                <p>{{ item.description }}</p>
+                                <a href="/portfolio/{{item.identifier}}"><button class="link-button">Bekijken</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-
-    </div>
-
-
+            {% endfor %}
+        <!-- </div> -->
+        
     </body>
     <footer>
         {% partial "footer" %}
