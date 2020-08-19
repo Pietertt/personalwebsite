@@ -1,38 +1,24 @@
 <form onsubmit="return false;"> 
-    <div class="thirteen wide top bottom container">
+    <div class="thirteen wide container">
           <div class="six wide one offset column">
                 <div class="half row">
                       <label>Voornaam + achternaam</label>
                       <input type="text" name="name" placeholder="Je naam">
                 </div>
-          </div>
-    </div>
-          
-    <div class="thirteen wide top bottom container">
-          <div class="six wide one offset column">
                 <div class="half row">
-                      <label>E-mailadres</label>
-                      <input type="email" name="email" placeholder="Je e-mailadres">
+                    <label>E-mailadres</label>
+                    <input type="email" name="email" placeholder="Je e-mailadres">
+                </div>
+                <div class="half row">
+                    <label>Bericht</label>
+                    <textarea name="message" rows="10" class="fluid" placeholder="Je bericht"></textarea> 
+                </div>
+                <div class="half row">
+                    <label class="avg"><input name="avg" type="checkbox"/>Ik ga akkoord met de <a href="/algemene-voorwaarden">algemene voorwaarden</a></label>
+                </div>
+                <div class="half row">
+                    <button data-request="onTest" data-request-validate data-attach-loading data-request-flash class="pink button">Verzenden</span></button>
                 </div>
           </div>
-    </div>
-
-    <div class="thirteen wide top bottom container">
-          <div class="six wide one offset column">
-                <div class="half row">
-                      <label>Bericht</label>
-                      <textarea name="message" rows="10" class="fluid" placeholder="Je bericht"></textarea> 
-                </div>
-          </div>
-    </div>
-    <div class="thirteen wide top bottom container">
-          <div class="six wide one offset column">
-              <div class="top row">
-                  <label class="avg"><input name="avg" type="checkbox"/>Ik ga akkoord met de <a href="/algemene-voorwaarden">algemene voorwaarden</a></label>
-              </div>
-                <div class="half row">
-                      <button data-request="onTest" data-request-validate data-attach-loading data-request-flash class="pink button">Verzenden</span></button>
-                </div>
-          </div> 
     </div>
 </form> 
