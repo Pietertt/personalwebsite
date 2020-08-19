@@ -11,15 +11,15 @@ default = 0
       </head>
       <body>
             {% partial "navigation" %}
-            <div class="thirteen wide double bottom container">
-                <div class="eleven wide one offset double bottom dark-blue container">
+            <div class="thirteen wide double top container">
+                <div class="eleven wide one offset double dark-blue container">
                   <div class="eleven wide one offset column">
                         {% page %}
                   </div>
             </div>
             </div>
 
-            <div class="eleven wide one offset horizontal reverse mobile light-gray container">
+            <div class="eleven wide one offset horizontal reverse mobile light-gray double container">
                   <div class="three wide one offset column">
                         {% placeholder one title="Afbeelding 1" %}
                   </div>
@@ -28,7 +28,7 @@ default = 0
                   </div>
             </div>
 
-            <div class="eleven wide one offset horizontal mobile top bottom container">
+            <div class="eleven wide one offset horizontal mobile double container">
                   <div class="three wide column">
                         {% placeholder three title="Titel 2"%}
                   </div>
@@ -37,7 +37,7 @@ default = 0
                   </div>
             </div>
 
-            <div class="eleven wide one offset bottom light-gray horizontal wrap container">
+            <div class="eleven wide one offset light-gray horizontal wrap container">
                   <div class="eleven wide one offset column">
                         {% placeholder five title="Titel 3" %}
                   </div>
@@ -52,19 +52,14 @@ default = 0
 
             <div class="thirteen wide horizontal wrap container">
                   <div class="eleven wide one offset column">
-                        {% placeholder eight title="Titel 4" %}
-                  </div>
-                  <div class="eleven wide one offset column">
-                        {% placeholder nine title="Afbeelding 4" %}
-                  </div>
-            </div>
-
-            <div class="thirteen wide top bottom container">
-                  <div class="six wide one offset column">
-                        {% placeholder ten title="Button" %}
+                        <div class="half row">
+                            {% placeholder eight title="Titel 4" %}
+                        </div>
+                        <div class="half row">
+                            {% placeholder nine title="Afbeelding 4" %}
+                        </div>
                   </div>
             </div>
-            
       </body>
       <footer>
             {% partial "footer" %}

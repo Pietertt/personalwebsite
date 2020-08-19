@@ -25,6 +25,5 @@ function onStart(){
       $this['colors'] = ["dark-blue", "blue", "light-blue", "pink", "white", "reverse"];
 }
 ==
-<div class="row">
-      <a {% if target == 1 %} target="_blank" {% endif %} href="{{link}}"><button class="{{colors[background_color - 1]}} button">{{text}}</button></a>
-</div>
+
+<a {% if target == 1 %} target="_blank" {% endif %} href="{{link}}"><button class="{{colors[background_color - 1]}} button">{{text}}</button></a>
