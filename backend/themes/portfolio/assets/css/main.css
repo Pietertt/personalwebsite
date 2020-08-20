@@ -177,8 +177,8 @@ p {
 [class*="column"]{
       float: left;
       width: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
       word-break: break-word; 
 }
 
@@ -186,7 +186,7 @@ p {
       margin-right: 0;
 }
 
-[class*="one offset"]     { margin-left: 10px; width: calc(100% - 20px); }
+[class*="offset"]     { margin-left: 20px; width: calc(100% - 40px); }
 
 [class*="left floated"]{
       float: none;
