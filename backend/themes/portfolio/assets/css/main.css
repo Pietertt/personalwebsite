@@ -177,6 +177,8 @@ p {
 [class*="column"]{
       float: left;
       width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
       word-break: break-word; 
 }
 
@@ -197,7 +199,7 @@ p {
       }
 
       [class*="column"]{ 
-            padding: 0;
+            padding-left: 0 !important;
       }
 
       [class*="one wide"]     { width: 7.69%;   }
