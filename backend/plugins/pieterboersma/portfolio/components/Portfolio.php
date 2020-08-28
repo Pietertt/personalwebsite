@@ -15,6 +15,7 @@ class Portfolio extends \Cms\Classes\ComponentBase {
           public function items()
           {
             $items = Item::all();
+            $items->reverse();
 
             return $items;
           }

@@ -363,21 +363,21 @@ h1, h2, h3 {
 }
 
 h1 {
-      font-size: 50px;
+      font-size: 80px;
+      font-family: 'Bebas Neue';
+}
+
+h2 {
+    font-size: 30px;
+    font-family: 'Helvetica Neue';
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 300;
 }
 
 [class*="header"]{
       padding: 0;
       margin: 0;
       font-family: 'Bebas Neue';
-}
-
-[class*="top header"] {
-      padding-top: initial;
-}
-
-[class="bottom header"]{
-      padding-bottom: initial;
 }
 
 .lighter {
@@ -686,4 +686,17 @@ th {
 
 [class*="half-bordered"] > img {
     border-radius: 4px 4px 0px 0px;
+}
+
+/* ------------------------------------------------------- 
+      Utilities
+------------------------------------------------------- */
+
+.color-block {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
 }

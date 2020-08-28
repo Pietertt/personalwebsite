@@ -4,6 +4,7 @@
 
       Route::get('/items', function(){
             $items = Item::all();
+            $items->reverse();
             return $items;
       });
 ?>

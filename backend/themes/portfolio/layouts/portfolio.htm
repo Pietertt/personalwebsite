@@ -7,7 +7,7 @@ default = 0
 use pieterboersma\Portfolio\Models\Item;
 
 function onStart(){
-$this['items'] = Item::all();
+$this['items'] = Item::all()->reverse();
 }
 ==
 <html>
