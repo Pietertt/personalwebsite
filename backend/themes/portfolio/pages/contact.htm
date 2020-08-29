@@ -1,0 +1,31 @@
+title = "Contact"
+url = "/contact"
+is_hidden = 0
+
+[contactform]
+==
+
+<html>
+      <head>
+            <script src="{{ 'assets/javascript/jquery.js'|theme }}"></script>
+            <title>Pieter Boersma - Contact</title>
+            {% framework extras %}
+            {% partial "header" %}  
+      </head>
+      <body>
+            {% partial "navigation" %}
+            <div class="thirteen wide container">
+                  <div class="six wide one offset column">
+                    <h2>Geïnteresseerd? Vragen?</h2>
+                    <p>Vul het contactformulier in, ik probeer zo snel mogelijk te reageren. Bellen/appen is natuurlijk sneller, stuur me daarom een appje of bel me op 06 11 25 58 36 voor een snellere reactie.</p>
+                  </div>
+            </div>
+            {% component 'contactform' %}
+      </body>
+      <footer>
+            {% partial "footer" %}
+      </footer>
+</html>
+
+
+
