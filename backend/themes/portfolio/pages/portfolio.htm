@@ -7,8 +7,8 @@ is_hidden = 0
 use pieterboersma\Portfolio\Models\Item;
 
 function onStart(){
-    $this['even_items'] = Item::whereRaw('(id % 2) == 0')->get();
-    $this['uneven_items'] = Item::whereRaw('(id % 2) != 0')->get();
+    $this['even_items'] = Item::whereRaw('(id % 2) == 0')->orderBy('created_at', 'DESC')->get();
+    $this['uneven_items'] = Item::whereRaw('(id % 2) != 0')->orderBy('created_at', 'DESC')->get();
 }
 
 ==
@@ -71,7 +71,7 @@ function onStart(){
                     </div>
                 </div>
                 {% endfor %}
-                
+
             </div>
             
         </div>
