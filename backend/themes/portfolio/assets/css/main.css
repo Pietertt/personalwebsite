@@ -245,10 +245,10 @@ p {
       [class*="horizontal reverse mobile"]{
             flex-direction: row;
       }
-
+/* 
       [class*="test"]{
             flex-direction: row-reverse;
-      }
+      } */
 
       [class*="one margin"]{        margin-right: 20px; }
       [class*="two margin"]{        margin-right: 40px; }

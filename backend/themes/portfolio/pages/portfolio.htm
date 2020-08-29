@@ -7,6 +7,91 @@ is_hidden = 0
 use pieterboersma\Portfolio\Models\Item;
 
 function onStart(){
+    $this['even_items'] = Item::whereRaw('(id % 2) == 0')->get();
+    $this['uneven_items'] = Item::whereRaw('(id % 2) != 0')->get();
+}
+
+==
+
+<html>
+    <head>
+        {% partial "header" %}
+        <title>Pieter Boersma - mijn portfolio</title>
+    </head>
+    <body>
+
+        {% partial "navigation" %}
+
+        <div class="thirteen wide text-centered double container">
+            <div class="eleven wide one offset column">
+                <h1>Mijn portfolio</h1>
+            </div>
+        </div>
+
+        <div class="thirteen wide container">
+            <div class="five wide one offset test column">
+
+                {% for item in even_items %}
+                <div class="thirteen wide container">
+                    <div class="thirteen wide white border column">
+                        <div class="bottom row">
+                            <div class="half-bordered image">
+                                <img src="/storage/app/media{{item.file}}">
+                            </div>
+                        </div>
+                        <div class="top row">
+                            <div class="eleven wide one offset column">
+                                <h2>{{ item.title }}</h2>
+                                <p>{{ item.description }}</p>
+                                <a href="/portfolio/{{item.identifier}}"><button class="link-button">Bekijken</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="five wide one offset test column">
+                
+                {% for item in uneven_items %}
+                <div class="thirteen wide container">
+                    <div class="thirteen wide white border column">
+                        <div class="bottom row">
+                            <div class="half-bordered image">
+                                <img src="/storage/app/media{{item.file}}">
+                            </div>
+                        </div>
+                        <div class="top row">
+                            <div class="eleven wide one offset column">
+                                <h2>{{ item.title }}</h2>
+                                <p>{{ item.description }}</p>
+                                <a href="/portfolio/{{item.identifier}}"><button class="link-button">Bekijken</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+            
+        </div>
+
+    </body>
+    <footer>
+        {% partial "footer" %}
+    </footer>
+</html>
+
+<!-- 
+title = "Portfolio"
+url = "/portfolio"
+description = "Mijn portfolio pagina"
+is_hidden = 0
+
+==
+use pieterboersma\Portfolio\Models\Item;
+
+function onStart(){
     $this['items'] = Item::all()->reverse();
 }
 
@@ -21,9 +106,9 @@ function onStart(){
 
         {% partial "navigation" %}
 
-        <div class="thirteen wide dark-blue text-centered double container">
+        <div class="thirteen wide pink text-centered container">
             <div class="eleven wide one offset column">
-                <h1>Mijn portfolio</h1>
+                <h1 class="white-color"> portfolio</h1>
             </div>
         </div>
 
@@ -49,4 +134,39 @@ function onStart(){
     <footer>
         {% partial "footer" %}
     </footer>
-</html>
+</html> -->
+
+<!-- 
+    
+    {% for item in even_items %}
+                    <div class="five wide one offset pink container">
+                        Hi
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="five wide one offset column">
+
+                {% for item in uneven_items %}
+                <div class="five wide one offset pink container">
+                    Hi
+                </div>
+                {% endfor %}
+    
+    <div class="thirteen wide container">
+    <div class="thirteen wide white border column">
+        <div class="bottom row">
+            <div class="half-bordered image">
+                <img src="/storage/app/media{{item.file}}">
+            </div>
+        </div>
+        <div class="top row">
+            <div class="eleven wide one offset column">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+                <a href="/portfolio/{{item.identifier}}"><button class="link-button">Bekijken</button></a>
+            </div>
+        </div>
+    </div>
+</div> -->
