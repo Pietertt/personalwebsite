@@ -9,9 +9,9 @@
                 <span class="fa fa-close" aria-hidden="true">&#10005;</span>
             </a>
             <ul>
-                <li><a href="/" class="{% if 'homepagina' in this.page.url %}active{% endif %}">Home</a></li>
+                <li><a href="/" class="{% if 'homepagina' in this.page.id %}active{% endif %}">Home</a></li>
                 <li><a href="/portfolio" class="{% if 'portfolio' in this.page.url %}active{% endif %}">Portfolio</a></li>
-                <li><a href="/contact" class="{% if 'contact' in this.page.url %}active{% endif %}">Contact</a></li>
+                <li><a href="/contact" class="{% if 'contact' in this.page.id %}active{% endif %}">Contact</a></li>
             </ul>
         </nav>
         <a href="#main-menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true" hidden></a>
