@@ -178,8 +178,7 @@ p {
 [class*="column"]{
       float: left;
       width: 100%;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin: 20px;
       word-break: break-word; 
 }
 
@@ -201,6 +200,7 @@ p {
 
       [class*="column"]{ 
             padding-left: 0 !important;
+            margin: 0;
       }
 
       [class*="one wide"]     { width: 7.69%;   }
@@ -365,7 +365,7 @@ h1, h2, h3 {
 
 h1 {
       font-size: 80px;
-      font-family: 'Bebas Neue';
+      font-family: 'Helvetica Neue';
 }
 
 h2 {
@@ -700,4 +700,8 @@ th {
     margin-right: 30px;
     margin-bottom: 30px;
     border-radius: 10px;
+}
+
+hr {
+    width: 100%;
 }
