@@ -1,7 +1,5 @@
 static-pages:
-    index: {  }
     contact: {  }
-    portfolio:
-        portfolio-valksverhuur: {  }
-        portfolio-boekbinderij-van-der-meer: {  }
     algemene-voorwaarden: {  }
+    portfolio-valksverhuur: {  }
+    portfolio-boekbinderij-van-der-meer: {  }

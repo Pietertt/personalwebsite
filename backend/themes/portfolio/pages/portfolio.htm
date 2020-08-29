@@ -1,36 +1,32 @@
-description = "Portfolio"
+title = "Portfolio"
+url = "/portfolio"
+description = "Mijn portfolio pagina"
+is_hidden = 0
 
-[staticPage]
-useContent = 1
-default = 0
 ==
 use pieterboersma\Portfolio\Models\Item;
 
 function onStart(){
-$this['items'] = Item::all()->reverse();
+    $this['items'] = Item::all()->reverse();
 }
+
 ==
+
 <html>
     <head>
         {% partial "header" %}
         <title>Pieter Boersma - mijn portfolio</title>
     </head>
     <body>
-      
-        <!-- <div class="thirteen wide light-gray double container">
-            <div class="thirteen wide gray bottom container">
-                <div class="eleven wide one offset column">
-                    {% page %}
-                </div>
-            </div>
-        </div>
- -->
 
         {% partial "navigation" %}
 
-        <div class="thirteen wide double text-centered container">
-            <div class="seven wide three offset column">
-                <h1>Een overzicht van mijn projecten</h1>
+        <div class="thirteen wide pink container">
+            <div class="five wide one offset column">
+                <h1 class="white-color">Mijn portfolio</h1>
+            </div>
+            <div class="five wide one offset column">
+                <h2>Een overzicht mijn projecten. Ge&iuml;nteresseerd? Neemt contact met me op!</h2>
             </div>
         </div>
 
