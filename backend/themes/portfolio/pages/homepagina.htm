@@ -1,42 +1,29 @@
 title = "Homepagina"
 url = "/"
+layout = "default"
 is_hidden = 0
 ==
 
-<html>
-    <head>
-        {% partial "header" %}
-        <title>Pieter Boersma - homepagina</title>
-    </head>
-    <body>
-        {% partial "navigation" %}
-        <div class="thirteen wide horizontal reverse mobile top container">
-            <div class="five wide one offset column">
-                <div class="row">
-                    <div class="image">
-                        <img src="/storage/app/media/me.jpg">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="five wide one offset column">
-                <div class="row">
-                    <h1>Pieter Boersma, een creative ICT student</h1>
-                </div>
-                <div class="row">
-                    <div class="thirteen wide bottom container">
-                        <p>Als ICT student word ik breed opgeleid. In de eerste twee jaar kwamen verschillende onderwerpen als game development, web development, ondernemen en robotica aan bod.</p>
-                        <p>Ik wil mij in mijn derde en vierde jaar verder ontwikkelen in het ontwerpen van applicaties die gemakkelijk te gebruiken zijn én die er strak en modern uit zien.</p>
-                        <a href="/portfolio"><button class="pink button">Portfolio</button></a>
-                    </div>
-                </div>
+<div class="thirteen wide horizontal reverse mobile top container">
+    <div class="five wide one offset column">
+        <div class="row">
+            <div class="image">
+                <img src="/storage/app/media/me.jpg">
             </div>
         </div>
-    </body>
-      <footer>
-            {% partial "footer" %}
-      </footer>
-</html>
-
-
+    </div>
+    
+    <div class="five wide one offset column">
+        <div class="row">
+            <h1>Pieter Boersma, een creative ICT student</h1>
+        </div>
+        <div class="row">
+            <div class="thirteen wide bottom container">
+                <p>Als ICT student word ik breed opgeleid. In de eerste twee jaar kwamen verschillende onderwerpen als game development, web development, ondernemen en robotica aan bod.</p>
+                <p>Ik wil mij in mijn derde en vierde jaar verder ontwikkelen in het ontwerpen van applicaties die gemakkelijk te gebruiken zijn én die er strak en modern uit zien.</p>
+                <a href="/portfolio"><button class="pink button">Portfolio</button></a>
+            </div>
+        </div>
+    </div>
+</div>
 
