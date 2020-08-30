@@ -179,6 +179,8 @@ p {
       float: left;
       width: 100%;
       margin: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
       word-break: break-word; 
 }
 
